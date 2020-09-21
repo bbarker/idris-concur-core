@@ -1,0 +1,17 @@
+ns="Concur.Core"
+package="ConcurCore"
+version="0.0.1"
+
+description=""
+link=""
+readme=""
+modules=["ConcurCore"]
+depends=["idris2", "contrib"]
+license=""
+main="ConcurCore"
+executable="ConcurCore"
+
+[deps]
+
+[dev-deps]
+Base.IdrTest="~0.0.1"

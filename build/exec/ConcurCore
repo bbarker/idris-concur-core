@@ -1,0 +1,51 @@
+class IdrisError extends Error { }
+function __prim_idris2js_FArgList(x){if(x.h === 0){return []}else{return x.a2.concat(__prim_idris2js_FArgList(x.a3))}}
+function __prim_js2idris_array(x){if(x.length ===0){return {h:0}}else{return {h:1,a1:x[0],a2: __prim_js2idris_array(x.slice(1))}}}
+const __esPrim_idrisworld = (Symbol('idrisworld'));
+
+function ConcurCore_main(){//ConcurCore.idr:3:1--4:1
+ return Prelude_IO_putStrLn(undefined, ({h:0, a1: ({h:0, a1: ({h:0, a1: (b) => {return (a) => {return (func) => {return (arg_45) => {return (eta_0) => {return Prelude_IO_map$5fFunctor$5f$5fIO(undefined, undefined, func, arg_45, eta_0);};};};};}, a2: (a) => {return (arg_112) => {return (eta_0) => {return arg_112;};};}, a3: (b) => {return (a) => {return (arg_113) => {return (arg_115) => {return (eta_0) => {const act_17 = arg_113(eta_0);
+const act_16 = arg_115(eta_0);
+return act_17(act_16);};};};};}}), a2: (b) => {return (a) => {return (arg_274) => {return (arg_275) => {return (eta_0) => {const act_24 = arg_274(eta_0);
+return arg_275(act_24)(eta_0);};};};};}, a3: (a) => {return (arg_277) => {return (eta_0) => {const act_51 = arg_277(eta_0);
+return act_51(eta_0);};};}}), a2: (a) => {return (arg_5832) => {return arg_5832;};}}), 'Hello from Concur.Core.ConcurCore');
+}
+
+function PrimIO_case__unsafePerformIO_401(arg_0, arg_1, arg_2, arg_3){//PrimIO.idr:108:32--109:75
+ return PrimIO_unsafeDestroyWorld(undefined, undefined, arg_3);
+}
+
+function PrimIO_unsafePerformIO(arg_0, arg_1){//PrimIO.idr:105:1--106:36
+ return PrimIO_unsafeCreateWorld(undefined, (w) => {return PrimIO_case__unsafePerformIO_401(undefined, undefined, undefined, arg_1(w));});
+}
+
+function PrimIO_unsafeDestroyWorld(arg_0, arg_1, arg_2){//PrimIO.idr:102:1--102:46
+ return arg_2;
+}
+
+function PrimIO_unsafeCreateWorld(arg_0, arg_1){//PrimIO.idr:99:1--99:53
+ return arg_1(__esPrim_idrisworld);
+}
+
+function Prelude_IO_map$5fFunctor$5f$5fIO(arg_0, arg_1, arg_2, arg_3, ext_0){//Prelude/IO.idr:15:1--19:1
+ const act_3 = arg_3(ext_0);
+ return arg_2(act_3);
+}
+
+function Prelude_IO_putStrLn(arg_0, arg_1, arg_2){//Prelude/IO.idr:81:1--84:1
+ return Prelude_IO_putStr(undefined, arg_1, (arg_2 + '\n'));
+}
+
+function Prelude_IO_putStr(arg_0, arg_1, arg_2){//Prelude/IO.idr:76:1--79:1
+ switch(arg_1.h){
+  case 0: {
+   return arg_1.a2(undefined)((eta_0) => {return Prelude_IO_prim$5f$5fputStr(arg_2, eta_0);});
+   break; }
+  default:
+   throw new Error('unhandled con case on Prelude/IO.idr:35:3--35:32');
+ }
+}
+
+const Prelude_IO_prim$5f$5fputStr = (x=>process.stdout.write(x))
+
+try{PrimIO_unsafePerformIO(undefined, ConcurCore_main());}catch(e){if(e instanceof IdrisError){console.log('ERROR: ' + e.message)}else{throw e} }
